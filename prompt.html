@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Confirmar abertura</title>
+<style>
+  body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #222;
+    color: white;
+  }
+  button {
+    margin: 10px;
+    padding: 10px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+  }
+  #open-btn {
+    background-color: #4caf50;
+    color: white;
+  }
+  #close-btn {
+    background-color: #f44336;
+    color: white;
+  }
+</style>
+</head>
+<body>
+  <h2>Abrir MP3/WAV?</h2>
+  <div>
+    <button id="open-btn">Abrir</button>
+    <button id="close-btn">Fechar</button>
+  </div>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    document.getElementById('open-btn').addEventListener('click', () => {
+      ipcRenderer.send('prompt-open-file');
+    });
+
+    document.getElementById('close-btn').addEventListener('click', () => {
+      ipcRenderer.send('prompt-close-app');
+    });
+  </script>
+</body>
+</html>

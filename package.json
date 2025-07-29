@@ -1,0 +1,50 @@
+{
+  "name": "miniwaveplayer",
+  "version": "1.0.0",
+  "description": "Mini player rápido com waveform para MP3/WAV",
+  "main": "main.js",
+  "author": "hpuglia",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^29.0.0",
+    "electron-builder": "^24.6.0"
+  },
+  "build": {
+    "appId": "com.hpuglia.miniwaveplayer",
+    "asar": true,
+    "productName": "MiniWavePlayer",
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico",
+      "fileAssociations": [
+        {
+          "ext": "mp3",
+          "name": "MP3 File",
+          "description": "Reproduzir com MiniWavePlayer",
+          "role": "Viewer"
+        },
+        {
+          "ext": "wav",
+          "name": "WAV File",
+          "description": "Reproduzir com MiniWavePlayer",
+          "role": "Viewer"
+        }
+      ]
+    },
+    "nsis": {
+  "oneClick": false,
+  "perMachine": true,
+  "allowToChangeInstallationDirectory": true,
+  "allowElevation": true,
+  "runAfterFinish": true,
+  "include": "build/installer.nsh"
+}
+
+  }
+}

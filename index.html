@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MiniWavePlayer</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="close-button"></div>
+<div id="file-name-display"></div>
+
+  <div id="player-container">
+
+
+
+
+
+
+
+    <div id="waveform"></div>
+
+<div id="dynamic-time-display">
+  <div id="time-info">
+    <span id="elapsed-time">00:00</span> - 
+    <span id="total-time">00:00</span> | 
+    <span id="hover-time">00:00</span>
+  </div>
+  <div id="controls">
+    <button id="play-btn" title="Play/Pause">▶/❚❚</button>
+    <button id="stop-btn" title="Parar">■</button>
+  </div>
+
+  
+
+
+<div id="donation-modal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <p style="font-size:18px;">Deseja fazer uma doação?</p>
+    <div class="button-group">
+      <button id="donate-button">Fazer Doação</button>
+      <button id="close-app-button">Fechar</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+</div>
+    <div id="status">Aguardando...</div>
+  </div>
+
+
+
+
+  
+  <script src="https://unpkg.com/wavesurfer.js"></script>
+  <script src="renderer.js"></script>
+
+
+
+
+
+  
+</body>
+</html>
